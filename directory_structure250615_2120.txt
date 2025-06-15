@@ -1,0 +1,76 @@
+.
+├── archetypes
+│   └── default.md
+├── assets
+│   ├── css
+│   │   └── custom.css
+│   └── jsconfig.json
+├── content
+│   ├── _index.md
+│   ├── gallery
+│   │   ├── 20240615-sample-gallery
+│   │   │   ├── 001.jpg
+│   │   │   ├── 002.jpg
+│   │   │   ├── 003.jpg
+│   │   │   └── index.md
+│   │   └── 20240615-shimokitazawa
+│   │       ├── 001.jpg
+│   │       ├── 002.jpg
+│   │       ├── 003.jpg
+│   │       └── index.md
+│   └── page
+│       └── data.md
+├── directory_structure.txt
+├── directory_structure250615_1420.txt
+├── hugo.toml
+├── layouts
+│   ├── _default
+│   │   ├── data.html
+│   │   ├── single.html
+│   │   └── terms.html
+│   ├── index.html
+│   ├── partials
+│   │   └── header.html
+│   └── taxonomy
+│       └── tag.html
+├── public
+│   ├── data
+│   │   └── index.html
+│   ├── gallery
+│   │   ├── 20240615-sample-gallery
+│   │   │   ├── 001.jpg
+│   │   │   ├── 002.jpg
+│   │   │   ├── 003.jpg
+│   │   │   └── index.html
+│   │   ├── 20240615-shimokitazawa
+│   │   │   ├── 001.jpg
+│   │   │   ├── 002.jpg
+│   │   │   ├── 003.jpg
+│   │   │   └── index.html
+│   │   └── index.xml
+│   ├── index.html
+│   ├── index.xml
+│   ├── js
+│   │   └── toggle.js
+│   ├── page
+│   │   └── index.xml
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── tags
+│       ├── index.html
+│       ├── index.xml
+│       ├── 散歩
+│       │   └── index.xml
+│       ├── テスト
+│       │   └── index.xml
+│       ├── 下北沢
+│       │   └── index.xml
+│       └── サンプル
+│           └── index.xml
+├── static
+│   └── js
+│       └── toggle.js
+└── themes
+    └── hugo-theme-gallery
+
+29 directories, 45 files

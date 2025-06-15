@@ -1,7 +1,13 @@
 {{ define "main" }}
-  <main class="gallery">
-    {{ range where .Site.RegularPages "Section" "gallery" }}
-      {{ partial "album-card.html" . }}
-    {{ end }}
+  <main>
+    <h1>{{ .Site.Title }}</h1>
+    <p>{{ .Site.Params.description }}</p>
+
+    <h2>📸 最新ギャラリー</h2>
+    <ul>
+      {{ range where .Site.RegularPages "Section" "gallery" }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
   </main>
 {{ end }}

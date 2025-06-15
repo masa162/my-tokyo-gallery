@@ -1,0 +1,123 @@
+.
+├── archetypes
+│   └── default.md
+├── assets
+├── content
+├── data
+├── directory_structure.txt
+├── hugo.toml
+├── i18n
+├── layouts
+├── static
+└── themes
+    └── hugo-theme-gallery
+        ├── LICENSE
+        ├── README.md
+        ├── assets
+        │   ├── css
+        │   │   ├── _colors.scss
+        │   │   ├── _normalize.scss
+        │   │   ├── _styles.scss
+        │   │   ├── custom.css
+        │   │   ├── main.scss
+        │   │   └── photoswipe
+        │   │       ├── photoswipe-dynamic-caption-plugin.css
+        │   │       └── photoswipe.css
+        │   ├── js
+        │   │   ├── custom.js
+        │   │   ├── gallery.js
+        │   │   ├── justified-layout.ts
+        │   │   ├── lazysizes.js
+        │   │   ├── lightbox.js
+        │   │   ├── main.js
+        │   │   ├── menu.js
+        │   │   └── photoswipe
+        │   │       ├── photoswipe-dynamic-caption-plugin.esm.min.js
+        │   │       ├── photoswipe-lightbox.esm.js
+        │   │       └── photoswipe.esm.js
+        │   └── jsconfig.json
+        ├── exampleSite
+        │   ├── README.md
+        │   ├── assets
+        │   │   └── css
+        │   │       └── custom.css
+        │   ├── config
+        │   │   └── _default
+        │   │       └── hugo.toml
+        │   ├── content
+        │   │   ├── _index.md
+        │   │   ├── about.md
+        │   │   ├── animals
+        │   │   │   ├── _index.md
+        │   │   │   ├── cats
+        │   │   │   │   └── index.md
+        │   │   │   └── dogs
+        │   │   │       └── index.md
+        │   │   ├── categories
+        │   │   │   └── animals
+        │   │   │       └── _index.md
+        │   │   ├── fashion-beauty
+        │   │   │   └── index.md
+        │   │   ├── featured-album
+        │   │   │   └── index.md
+        │   │   ├── imprint.md
+        │   │   ├── nature
+        │   │   │   └── index.md
+        │   │   └── private
+        │   │       └── index.md
+        │   ├── go.mod
+        │   ├── layouts
+        │   │   └── partials
+        │   │       └── head-custom.html
+        │   ├── package.json
+        │   └── pull-images.sh
+        ├── go.mod
+        ├── i18n
+        │   ├── da.yaml
+        │   ├── de.yaml
+        │   ├── en.yaml
+        │   ├── es.yaml
+        │   ├── fr.yaml
+        │   ├── it.yaml
+        │   ├── ja.yaml
+        │   ├── nb.yaml
+        │   ├── uk.yaml
+        │   └── zh.yaml
+        ├── images
+        │   ├── screenshot.jpg
+        │   └── tn.jpg
+        ├── layouts
+        │   ├── 404.html
+        │   ├── _default
+        │   │   ├── baseof.html
+        │   │   ├── home.html
+        │   │   ├── list.html
+        │   │   ├── prose.html
+        │   │   ├── rss.xml
+        │   │   ├── single.html
+        │   │   └── sitemap.xml
+        │   └── partials
+        │       ├── album-card.html
+        │       ├── categories.html
+        │       ├── featured.html
+        │       ├── footer.html
+        │       ├── gallery.html
+        │       ├── get-gallery.html
+        │       ├── head-custom.html
+        │       ├── head.html
+        │       ├── header.html
+        │       ├── menu.html
+        │       ├── opengraph.html
+        │       ├── related.html
+        │       ├── social-icons.html
+        │       └── title.html
+        ├── package.json
+        ├── prettier.config.js
+        ├── static
+        │   └── images
+        │       ├── apple-touch-icon.png
+        │       ├── favicon.png
+        │       └── favicon.svg
+        └── theme.toml
+
+39 directories, 82 files

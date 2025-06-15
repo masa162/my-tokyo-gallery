@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <main class="gallery">
+    <h1>{{ .Title }}</h1>
+
+    {{ with .Params.images }}
+      <div class="gallery-thumbnails">
+        {{ range . }}
+          {{ $img := $.Resources.GetMatch . }}
+          {{ if $img }}
+            <a href="{{ $img.RelPermalink }}">
+              <img src="{{ $img.RelPermalink }}" loading="lazy" />
+            </a>
+          {{ else }}
+            <p>画像 {{ . }} が見つかりません</p>
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ end }}
+
+    {{ .Content }}
+
+    {{ with .Params.tags }}
+      <div class="tags">
+        Tags:
+        {{ range . }}
+          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </main>
+{{ end }}

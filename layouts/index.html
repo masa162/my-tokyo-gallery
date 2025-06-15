@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <main class="gallery">
+    {{ range where .Site.RegularPages "Section" "gallery" }}
+      {{ partial "album-card.html" . }}
+    {{ end }}
+  </main>
+{{ end }}

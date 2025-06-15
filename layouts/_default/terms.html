@@ -1,12 +1,13 @@
 {{ define "main" }}
 <main>
   <h1>🏷️ Tags</h1>
-  <div class="tag-list">
+  <ul>
     {{ range .Data.Terms.Alphabetical }}
-      <a class="tag-badge" href="{{ .Page.RelPermalink }}">
-        #{{ .Term }} <span class="tag-count">({{ .Count }})</span>
-      </a>
+      <li>
+        <a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a>
+        <span>({{ .Count }})</span>
+      </li>
     {{ end }}
-  </div>
+  </ul>
 </main>
 {{ end }}

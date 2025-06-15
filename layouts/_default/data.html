@@ -1,0 +1,38 @@
+{{ define "main" }}
+<main>
+  <h1>🗂️ Data</h1>
+
+  <div class="archive">
+    {{ range (.Site.RegularPages.ByDate.Reverse).GroupByDate "2006" }}
+      <div class="year-block">
+        <button class="toggle-btn"
+                data-target="y{{ .Key }}">📅 {{ .Key }}</button>
+
+        <div class="toggle-content" id="y{{ .Key }}">
+          {{ range (.Pages.ByDate.Reverse).GroupByDate "01" }}
+            <div class="month-block">
+              <button class="toggle-btn"
+                      data-target="y{{ $.Key }}m{{ .Key }}">▶ {{ .Key }}月</button>
+
+              <ul class="toggle-content"
+                  id="y{{ $.Key }}m{{ .Key }}">
+                {{ range (.Pages.ByDate.Reverse).GroupByDate "02" }}
+                  {{ range .Pages }}
+                    <li>
+                      <a href="{{ .RelPermalink }}">
+                        {{ .Date.Format "2日" }} — {{ .Title }}
+                      </a>
+                    </li>
+                  {{ end }}
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</main>
+
+<script src="/js/toggle.js"></script>
+{{ end }}

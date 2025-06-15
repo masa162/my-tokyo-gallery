@@ -1,0 +1,109 @@
+/* ナビゲーションリンクスタイル */
+.site-header nav a {
+  text-decoration: none;
+  padding: 0.5em;
+  font-weight: bold;
+  color: #ccc;
+}
+.site-header nav a:hover {
+  color: #fff;
+}
+
+/* サイトタイトルリンク */
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ナビゲーション（デスクトップ） */
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: none;
+}
+
+/* メニュー開閉ボタン（モバイル） */
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 2rem;
+  border: none;
+  color: #fff;
+}
+
+/* モバイル表示の切替 */
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    padding: 1rem;
+    max-height: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  body.menu-open .site-nav {
+    display: flex;
+    max-height: 300px;
+  }
+}
+
+/* ------------------------- */
+/* 🗂️ Dataページ用トグルUI */
+/* ------------------------- */
+
+.toggle-content {
+  display: none;
+  margin-left: 1rem;
+}
+.toggle-content.open {
+  display: block;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  color: #fff;
+}
+.toggle-btn:hover {
+  text-decoration: underline;
+}
+
+.archive li {
+  margin: 0.25rem 0;
+}
+
+/* タグバッジ（オプション） */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+.tag-badge {
+  display: inline-block;
+  background: #2a2a2a;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.tag-badge:hover {
+  background: #444;
+}
+.tag-count {
+  font-size: 0.8rem;
+  color: #ccc;
+}

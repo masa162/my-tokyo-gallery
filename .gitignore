@@ -1,0 +1,13 @@
+cat <<'EOF' > .gitignore
+# ===== Hugo =====
+/public/
+/resources/
+
+# ===== OS / editor =====
+.DS_Store
+.idea/
+.vscode/
+
+# ===== Netlify (任意) =====
+.netlify/
+EOF

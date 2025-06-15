@@ -1,0 +1,16 @@
+baseURL = "https://your-site-name.netlify.app/"  # 後で書き換えてOK
+languageCode = "ja-jp"
+title = "Tokyo Photo Log"
+theme = "hugo-theme-gallery"
+enableRobotsTXT = true
+
+[params]
+  title = "Tokyo Photo Log"
+  description = "東京で撮った写真を気ままにアップするだけのログ"
+  copyright = "© 2025 masayuki nakayama"
+  photosDir = "gallery"
+  imagesExt = ["jpg", "jpeg", "png"]
+  footerText = "Powered by Hugo"
+
+[taxonomies]
+  tag = "tags"

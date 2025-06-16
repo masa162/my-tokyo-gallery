@@ -23,7 +23,7 @@
       <div class="tags">
         Tags:
         {{ range . }}
-          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>
+          <a href="{{ (printf "tags/%s/" (urlize .)) | absURL }}">#{{ . }}</a>
         {{ end }}
       </div>
     {{ end }}

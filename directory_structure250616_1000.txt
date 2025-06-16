@@ -1,0 +1,193 @@
+.
+├── archetypes
+│   └── default.md
+├── assets
+│   └── jsconfig.json
+├── content
+│   ├── _index.md
+│   ├── gallery
+│   │   ├── 20240615-sample-gallery
+│   │   │   ├── 001.jpg
+│   │   │   ├── 002.jpg
+│   │   │   ├── 003.jpg
+│   │   │   └── index.md
+│   │   └── 20240615-shimokitazawa
+│   │       ├── 001.jpg
+│   │       ├── 002.jpg
+│   │       ├── 003.jpg
+│   │       └── index.md
+│   └── page
+│       └── data.md
+├── directory_structure.txt
+├── directory_structure250615_1420.txt
+├── directory_structure250615_2120.txt
+├── directory_structure250616_0820.txt
+├── hugo.toml
+├── layouts
+│   ├── _default
+│   │   ├── baseof.html
+│   │   ├── data.html
+│   │   ├── home.html
+│   │   ├── list.html
+│   │   ├── single.html
+│   │   └── terms.html
+│   ├── partials
+│   │   ├── album-card.html
+│   │   └── header.html
+│   └── taxonomy
+│       └── tag.html
+├── public
+│   ├── 404.html
+│   ├── apple-touch-icon.png
+│   ├── bluesky.svg
+│   ├── css
+│   │   └── custom.css
+│   ├── data
+│   │   └── index.html
+│   ├── favicon.ico
+│   ├── gallery
+│   │   ├── 20240615-sample-gallery
+│   │   │   ├── 001.jpg
+│   │   │   ├── 002.jpg
+│   │   │   ├── 003.jpg
+│   │   │   └── index.html
+│   │   ├── 20240615-shimokitazawa
+│   │   │   ├── 001.jpg
+│   │   │   ├── 002.jpg
+│   │   │   ├── 003.jpg
+│   │   │   └── index.html
+│   │   ├── index.html
+│   │   └── index.xml
+│   ├── github.svg
+│   ├── highlight.min.js
+│   ├── index.html
+│   ├── index.xml
+│   ├── instagram.svg
+│   ├── js
+│   │   └── toggle.js
+│   ├── linkedin.svg
+│   ├── mastodon.svg
+│   ├── page
+│   │   ├── index.html
+│   │   └── index.xml
+│   ├── robots.txt
+│   ├── rss.svg
+│   ├── sitemap.xml
+│   ├── tags
+│   │   ├── index.html
+│   │   ├── index.xml
+│   │   ├── 散歩
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── テスト
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   ├── 下北沢
+│   │   │   ├── index.html
+│   │   │   └── index.xml
+│   │   └── サンプル
+│   │       ├── index.html
+│   │       └── index.xml
+│   ├── theme.png
+│   ├── theme.svg
+│   ├── threads.svg
+│   └── twitter.svg
+├── static
+│   ├── css
+│   │   └── custom.css
+│   └── js
+│       └── toggle.js
+└── themes
+    └── hugo-theme-gallery
+        ├── LICENSE
+        ├── README.md
+        ├── assets
+        │   ├── app.css
+        │   ├── custom.css
+        │   └── main.css
+        ├── exampleSite
+        │   ├── LICENSE
+        │   ├── README.md
+        │   ├── configTaxo.toml
+        │   ├── content
+        │   │   ├── _index.md
+        │   │   ├── about.md
+        │   │   ├── archives.md
+        │   │   ├── contact.md
+        │   │   ├── homepage
+        │   │   │   ├── about.md
+        │   │   │   ├── index.md
+        │   │   │   └── work.md
+        │   │   └── post
+        │   │       ├── _index.md
+        │   │       ├── emoji-support.md
+        │   │       ├── markdown-syntax.md
+        │   │       ├── math-typesetting.md
+        │   │       ├── placeholder-text.md
+        │   │       └── rich-content.md
+        │   ├── go.default.mod
+        │   ├── go.toml
+        │   ├── hugo.toml
+        │   ├── layouts
+        │   └── static
+        ├── go.mod
+        ├── i18n
+        │   ├── ar.yaml
+        │   ├── az.yaml
+        │   ├── be.yaml
+        │   ├── bn.yaml
+        │   ├── de.yaml
+        │   ├── en.yaml
+        │   ├── es.yaml
+        │   ├── fa.yaml
+        │   ├── fr.yaml
+        │   ├── he.yaml
+        │   ├── id.yaml
+        │   ├── it.yaml
+        │   ├── ja.yaml
+        │   ├── ko.yaml
+        │   ├── oc.yaml
+        │   ├── pl.yaml
+        │   ├── pt.yaml
+        │   ├── ru.yaml
+        │   ├── sw.yaml
+        │   ├── tr.yaml
+        │   └── zh.yaml
+        ├── images
+        │   ├── pagespeed.png
+        │   ├── screenshot.png
+        │   ├── screenshot_dark.png
+        │   └── tn.png
+        ├── layouts
+        │   ├── 404.html
+        │   ├── _default
+        │   │   ├── baseof.html
+        │   │   ├── list.html
+        │   │   └── single.html
+        │   ├── partials
+        │   │   ├── footer.html
+        │   │   ├── head.html
+        │   │   ├── header.html
+        │   │   ├── math.html
+        │   │   └── mermaid.html
+        │   └── shortcodes
+        │       └── collapse.html
+        ├── package.json
+        ├── pnpm-lock.yaml
+        ├── static
+        │   ├── apple-touch-icon.png
+        │   ├── bluesky.svg
+        │   ├── favicon.ico
+        │   ├── github.svg
+        │   ├── highlight.min.js
+        │   ├── instagram.svg
+        │   ├── linkedin.svg
+        │   ├── mastodon.svg
+        │   ├── rss.svg
+        │   ├── theme.png
+        │   ├── theme.svg
+        │   ├── threads.svg
+        │   └── twitter.svg
+        └── theme.toml
+
+44 directories, 147 files

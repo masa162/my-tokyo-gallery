@@ -1,4 +1,4 @@
-baseURL = "https://your-site-name.netlify.app/"  # 後で書き換えてOK
+baseURL = "https://masa162.github.io/my-tokyo-gallery/"
 languageCode = "ja-jp"
 title = "Tokyo Photo Log"
 theme = "hugo-theme-gallery"

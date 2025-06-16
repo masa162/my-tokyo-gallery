@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <main class="content">
+    <p>{{ .Site.Params.description }}</p>
+
+    <h2>Up to date　🌃</h2>
+    <div class="album-grid">
+      {{ range sort (where .Site.RegularPages "Section" "gallery") "Date" "desc" }}
+        {{ partial "album-card.html" . }}
+      {{ end }}
+    </div>
+  </main>
+{{ end }}

@@ -1,16 +1,17 @@
 {{ define "main" }}
 <main class="content">
+  <h1>
+    {{ if .Title }}タグ: {{ .Title }}{{ else }}Tags{{ end }}
+  </h1>
 
-  {{/* taxonomyTerm（/tags/）はすでに layouts/_default/terms.html が働くのでここでは処理しない */}}
-  {{ if eq .Kind "taxonomy" }}
-    <h1>タグ: {{ .Title }}</h1>
-
+  {{ if .Pages }}
     <div class="album-grid">
       {{ range sort .Pages "Date" "desc" }}
         {{ partial "album-card.html" . }}
       {{ end }}
     </div>
+  {{ else }}
+    <p>このタグにはまだ記事がありません。</p>
   {{ end }}
-
 </main>
 {{ end }}

@@ -143,3 +143,19 @@
   margin: 0.5rem;
 }
 
+/* ───────── ダークモード基準の配色 ───────── */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111;
+    color: #eee;
+  }
+  a { color: #8ab4ff; }
+}
+
+/* ライトモード用に一応フォールバック */
+@media (prefers-color-scheme: light) {
+  body {
+    background: #fff;
+    color: #111;
+  }
+}

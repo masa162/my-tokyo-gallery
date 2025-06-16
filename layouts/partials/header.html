@@ -2,12 +2,17 @@
 
 <header class="site-header">
   <div class="header-wrapper">
-    <a href="{{ "/" | absURL }}" class="site-title">📸 Tokyo Photo Log</a>
-    <button class="menu-toggle" aria-label="メニューを開閉" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    <!-- トップは relURL で OK -->
+    <a href="{{ "/" | relURL }}" class="site-title">📸 Tokyo Photo Log</a>
+    <button class="menu-toggle"
+            aria-label="メニューを開閉"
+            onclick="document.body.classList.toggle('menu-open')">☰</button>
   </div>
+
   <nav class="site-nav">
-    <a href="{{ "/data/" | absURL }}">🗂️ Data</a>
-    <a href="{{ "/tags/" | absURL }}">🏷️ Tags</a>
-    <a href="{{ "/about/" | absURL }}">👤 about</a>
+    <!-- 先頭スラッシュを付けず absURL -->
+    <a href="{{ "data/"  | absURL }}">🗂️ Data</a>
+    <a href="{{ "tags/"  | absURL }}">🏷️ Tags</a>
+    <a href="{{ "about/" | absURL }}">👤 about</a>
   </nav>
 </header>

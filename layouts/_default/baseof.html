@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
-    <meta name="color-scheme" content="light dark">
-
+    {{ partial "head.html" . }}
   </head>
+
   <body>
     {{ partial "header.html" . }}
+
     {{ block "main" . }}{{ end }}
+
     <footer>
       <p>© 2025 masayuki nakayama</p>
     </footer>
+
     <script src="{{ "js/toggle.js" | relURL }}"></script>
   </body>
 </html>

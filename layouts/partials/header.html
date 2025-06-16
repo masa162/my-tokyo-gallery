@@ -2,15 +2,15 @@
 
 <header class="site-header">
   <div class="header-wrapper">
-    <!-- トップは relURL で OK -->
-    <a href="{{ "/" | relURL }}" class="site-title">📸 Tokyo Photo Log</a>
+    <!-- 先頭スラッシュ無しで baseURL をそのまま取得 -->
+    <a href="{{ "" | absURL }}" class="site-title">📸 Tokyo Photo Log</a>
     <button class="menu-toggle"
             aria-label="メニューを開閉"
             onclick="document.body.classList.toggle('menu-open')">☰</button>
   </div>
 
   <nav class="site-nav">
-    <!-- 先頭スラッシュを付けず absURL -->
+    <!-- こちらは既に正しく動いている absURL -->
     <a href="{{ "data/"  | absURL }}">🗂️ Data</a>
     <a href="{{ "tags/"  | absURL }}">🏷️ Tags</a>
     <a href="{{ "about/" | absURL }}">👤 about</a>

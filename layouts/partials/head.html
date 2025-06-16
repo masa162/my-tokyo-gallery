@@ -8,8 +8,9 @@
 {{ with .Params.cover }}
   {{ $img = . }}
 {{ else }}
-  {{ with (.Resources.Match "*.{jpg,jpeg,png}" | first) }}
-    {{ $img = .RelPermalink }}
+  {{ $matches := .Resources.Match "*.{jpg,jpeg,png}" }}
+  {{ if gt (len $matches) 0 }}
+    {{ $img = (index $matches 0).RelPermalink }}
   {{ end }}
 {{ end }}
 {{ if not $img }}
@@ -36,9 +37,9 @@
 <meta name="twitter:description" content="{{ $description }}" />
 <meta name="twitter:image"       content="{{ $img }}" />
 
-<!-- Favicon：SVG +（任意）PNG -->
+<!-- Favicon -->
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml" />
 <link rel="icon" href="{{ "favicon.png" | relURL }}" sizes="32x32" />
 
-<!-- サイト共通 CSS -->
+<!-- CSS -->
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">

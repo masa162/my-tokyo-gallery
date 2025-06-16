@@ -1,0 +1,44 @@
+{{- /* layouts/partials/head.html */ -}}
+{{ $title       := .Title | default .Site.Title }}
+{{ $description := .Summary | plainify | default .Site.Params.description }}
+{{ $url         := .Permalink }}
+
+{{/* og:image 決定ロジック */}}
+{{ $img := "" }}
+{{ with .Params.cover }}
+  {{ $img = . }}
+{{ else }}
+  {{ with (.Resources.Match "*.{jpg,jpeg,png}" | first) }}
+    {{ $img = .RelPermalink }}
+  {{ end }}
+{{ end }}
+{{ if not $img }}
+  {{ $img = "/images/og-default.png" }}
+{{ end }}
+{{ $img = $img | absURL }}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}" />
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:url"         content="{{ $url }}" />
+<meta property="og:image"       content="{{ $img }}" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:title"       content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+<meta name="twitter:image"       content="{{ $img }}" />
+
+<!-- Favicon：SVG +（任意）PNG -->
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml" />
+<link rel="icon" href="{{ "favicon.png" | relURL }}" sizes="32x32" />
+
+<!-- サイト共通 CSS -->
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">

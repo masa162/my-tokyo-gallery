@@ -1,7 +1,12 @@
 <!-- layouts/partials/album-card.html -->
 <article class="album-card">
   <a href="{{ .RelPermalink }}">
-    <h2>{{ .Title }}</h2>
-    <p>{{ .Params.description }}</p>
+    {{ with .Params.cover }}
+      <img src="{{ printf "%s%s" $.RelPermalink . }}" alt="{{ $.Title }}" class="album-cover">
+    {{ end }}
+    <h3>{{ .Title }}</h3>
+    {{ with .Date }}
+      <p class="album-date">{{ .Format "2006-01-02" }}</p>
+    {{ end }}
   </a>
 </article>

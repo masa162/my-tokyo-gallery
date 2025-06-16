@@ -1,4 +1,6 @@
-/* ナビゲーションリンクスタイル */
+/* ------------------------- */
+/* 🌐 ナビゲーション & ヘッダー */
+/* ------------------------- */
 .site-header nav a {
   text-decoration: none;
   padding: 0.5em;
@@ -9,7 +11,6 @@
   color: #fff;
 }
 
-/* サイトタイトルリンク */
 .site-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -17,7 +18,6 @@
   text-decoration: none;
 }
 
-/* ナビゲーション（デスクトップ） */
 .site-nav {
   display: flex;
   gap: 1rem;
@@ -26,7 +26,6 @@
   max-height: none;
 }
 
-/* メニュー開閉ボタン（モバイル） */
 .menu-toggle {
   display: none;
   background: none;
@@ -35,7 +34,7 @@
   color: #fff;
 }
 
-/* モバイル表示の切替 */
+/* モバイル表示用 */
 @media (max-width: 768px) {
   .site-nav {
     display: none;
@@ -56,9 +55,8 @@
 }
 
 /* ------------------------- */
-/* 🗂️ Dataページ用トグルUI */
+/* 🗂️ Dataページ トグルUI */
 /* ------------------------- */
-
 .toggle-content {
   display: none;
   margin-left: 1rem;
@@ -83,7 +81,9 @@
   margin: 0.25rem 0;
 }
 
-/* タグバッジ（オプション） */
+/* ------------------------- */
+/* 🏷️ タグバッジ */
+/* ------------------------- */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -107,3 +107,39 @@
   font-size: 0.8rem;
   color: #ccc;
 }
+
+/* ------------------------- */
+/* 🖼️ ギャラリー表示（TOPカード） */
+/* ------------------------- */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.album-card {
+  border: 1px solid #444;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a1a1a;
+  transition: transform 0.2s;
+}
+.album-card:hover {
+  transform: translateY(-4px);
+}
+.album-card img.album-cover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.album-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+.album-date {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0.5rem;
+}
+

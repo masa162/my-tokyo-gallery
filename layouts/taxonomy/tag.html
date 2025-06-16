@@ -1,12 +1,11 @@
 {{ define "main" }}
-<main>
-  <h1>#{{ .Title }}</h1>
-  <ul>
-    {{ range .Pages }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </li>
+<main class="content">
+  <h1>Tags: {{ .Title }}</h1>
+
+  <div class="album-grid">
+    {{ range sort .Pages "Date" "desc" }}
+      {{ partial "album-card.html" . }}
     {{ end }}
-  </ul>
+  </div>
 </main>
 {{ end }}

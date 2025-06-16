@@ -1,16 +1,16 @@
 {{ define "main" }}
 <main class="content">
-  <h1>{{ if eq .Kind "term" }}🏷 Tags{{ else }}タグ: {{ .Title }}{{ end }}</h1>
 
-  {{/* taxonomyTerm (= /tags/) はタグ一覧をカード化せず既存の terms.html に任せたいので早期リターン */}}
-  {{ if eq .Kind "term" }}
-    {{ template "_internal/terms.html" . }}
-  {{ else }}
+  {{/* taxonomyTerm（/tags/）はすでに layouts/_default/terms.html が働くのでここでは処理しない */}}
+  {{ if eq .Kind "taxonomy" }}
+    <h1>タグ: {{ .Title }}</h1>
+
     <div class="album-grid">
       {{ range sort .Pages "Date" "desc" }}
         {{ partial "album-card.html" . }}
       {{ end }}
     </div>
   {{ end }}
+
 </main>
 {{ end }}

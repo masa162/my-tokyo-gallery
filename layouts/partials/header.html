@@ -1,16 +1,16 @@
-<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
-
 <header class="site-header">
   <div class="header-wrapper">
-    <!-- 先頭スラッシュ無しで baseURL をそのまま取得 -->
+    <!-- baseURL をそのまま利用してトップへ -->
     <a href="{{ "" | absURL }}" class="site-title">📸 Tokyo Photo Log</a>
+
     <button class="menu-toggle"
             aria-label="メニューを開閉"
-            onclick="document.body.classList.toggle('menu-open')">☰</button>
+            onclick="document.body.classList.toggle('menu-open')">
+      ☰
+    </button>
   </div>
 
   <nav class="site-nav">
-    <!-- こちらは既に正しく動いている absURL -->
     <a href="{{ "data/"  | absURL }}">🗂️ Data</a>
     <a href="{{ "tags/"  | absURL }}">🏷️ Tags</a>
     <a href="{{ "about/" | absURL }}">👤 about</a>

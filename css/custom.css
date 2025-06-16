@@ -1,0 +1,145 @@
+/* ------------------------- */
+/* 🌐 ナビゲーション & ヘッダー */
+/* ------------------------- */
+.site-header nav a {
+  text-decoration: none;
+  padding: 0.5em;
+  font-weight: bold;
+  color: #ccc;
+}
+.site-header nav a:hover {
+  color: #fff;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 2rem;
+  border: none;
+  color: #fff;
+}
+
+/* モバイル表示用 */
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    padding: 1rem;
+    max-height: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  body.menu-open .site-nav {
+    display: flex;
+    max-height: 300px;
+  }
+}
+
+/* ------------------------- */
+/* 🗂️ Dataページ トグルUI */
+/* ------------------------- */
+.toggle-content {
+  display: none;
+  margin-left: 1rem;
+}
+.toggle-content.open {
+  display: block;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  color: #fff;
+}
+.toggle-btn:hover {
+  text-decoration: underline;
+}
+
+.archive li {
+  margin: 0.25rem 0;
+}
+
+/* ------------------------- */
+/* 🏷️ タグバッジ */
+/* ------------------------- */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+.tag-badge {
+  display: inline-block;
+  background: #2a2a2a;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.tag-badge:hover {
+  background: #444;
+}
+.tag-count {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+/* ------------------------- */
+/* 🖼️ ギャラリー表示（TOPカード） */
+/* ------------------------- */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.album-card {
+  border: 1px solid #444;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a1a1a;
+  transition: transform 0.2s;
+}
+.album-card:hover {
+  transform: translateY(-4px);
+}
+.album-card img.album-cover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.album-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+.album-date {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0.5rem;
+}
+

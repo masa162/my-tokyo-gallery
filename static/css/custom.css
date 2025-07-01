@@ -34,7 +34,6 @@
   color: #fff;
 }
 
-/* モバイル表示用 */
 @media (max-width: 768px) {
   .site-nav {
     display: none;
@@ -55,7 +54,7 @@
 }
 
 /* ------------------------- */
-/* 🗂️ Dataページ トグルUI */
+/* 📂 Dataページ トグルUI */
 /* ------------------------- */
 .toggle-content {
   display: none;
@@ -82,7 +81,7 @@
 }
 
 /* ------------------------- */
-/* 🏷️ タグバッジ */
+/* 🍿 タグバッジ */
 /* ------------------------- */
 .tag-list {
   display: flex;
@@ -109,7 +108,7 @@
 }
 
 /* ------------------------- */
-/* 🖼️ ギャラリー表示（TOPカード） */
+/* 🖼️ ギャラリーカード（TOP・タグ共通） */
 /* ------------------------- */
 .album-grid {
   display: grid;
@@ -128,11 +127,15 @@
 .album-card:hover {
   transform: translateY(-4px);
 }
+
 .album-card img.album-cover {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   display: block;
+  border-radius: 6px;
 }
+
 .album-card h3 {
   font-size: 1.2rem;
   margin: 0.5rem;
@@ -142,8 +145,17 @@
   color: #999;
   margin: 0.5rem;
 }
+.album-cover.placeholder {
+  width: 100%;
+  height: 200px;
+  background: #2a2a2a;
+  display: block;
+  border-radius: 6px;
+}
 
-/* ───────── ダークモード基準の配色 ───────── */
+/* ------------------------- */
+/* 🌙 カラーモード対応 */
+/* ------------------------- */
 @media (prefers-color-scheme: dark) {
   body {
     background: #111;
@@ -152,7 +164,6 @@
   a { color: #8ab4ff; }
 }
 
-/* ライトモード用に一応フォールバック */
 @media (prefers-color-scheme: light) {
   body {
     background: #fff;

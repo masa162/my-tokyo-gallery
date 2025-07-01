@@ -1,12 +1,19 @@
-<!-- layouts/partials/album-card.html -->
 <article class="album-card">
   <a href="{{ .RelPermalink }}">
     {{ with .Params.cover }}
-      <img src="{{ printf "%s%s" $.RelPermalink . }}" alt="{{ $.Title }}" class="album-cover">
+      {{ if strings.HasPrefix . "http" }}
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" class="album-cover">
+      {{ else }}
+        {{ $img := $.Resources.GetMatch . }}
+        {{ if $img }}
+          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" class="album-cover">
+        {{ else }}
+          <div class="album-cover placeholder"></div>
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      <div class="album-cover placeholder"></div>
     {{ end }}
-    <h3>{{ .Title }}</h3>
-    {{ with .Date }}
-      <p class="album-date">{{ .Format "2006-01-02" }}</p>
-    {{ end }}
+    <h2>{{ .Title }}</h2>
   </a>
 </article>

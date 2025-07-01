@@ -1,29 +1,52 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages (Artifact)
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+
+# 標準 GitHub Pages デプロイ方式（artifact 経由）に必要な権限
+permissions:
+  contents: read          # ソース取得のみ
+  pages: write            # Pages へのデプロイ
+  id-token: write         # OIDC for deploy‑pages v4
+
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages        # Pages 環境は固定名
+      url:  ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Checkout
+      - name: Checkout source (with submodules)
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Ensure submodules are initialized
+        run: git submodule update --init --recursive
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.147.0'
+          hugo-version: '0.147.3'
           extended: true
 
-      - name: Build
+      - name: Build site
         run: hugo --minify
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      # ── Pages 用 Artifact に public/ をアップロード ──
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
+          path: ./public
+
+      # ── Artifact を GitHub Pages にデプロイ ──
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

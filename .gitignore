@@ -25,5 +25,7 @@
 
 # content/gallery配下の画像ディレクトリ（Markdownファイルは含める）
 content/gallery/*/
+!content/gallery/*/
+!content/gallery/*/*.md
 !content/gallery/*.md
 !content/gallery/*.ini

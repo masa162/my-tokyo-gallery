@@ -1,4 +1,3 @@
-cat <<'EOF' > .gitignore
 # ===== Hugo =====
 /public/
 /resources/
@@ -10,4 +9,21 @@ cat <<'EOF' > .gitignore
 
 # ===== Netlify (任意) =====
 .netlify/
-EOF
+
+# ===== 画像ファイル（Git履歴に含めない） =====
+# 画像ファイルは外部CDN（Cloudinary等）を使用するため、Gitには含めない
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.JPG
+*.JPEG
+*.PNG
+*.GIF
+*.WEBP
+
+# content/gallery配下の画像ディレクトリ（Markdownファイルは含める）
+content/gallery/*/
+!content/gallery/*.md
+!content/gallery/*.ini

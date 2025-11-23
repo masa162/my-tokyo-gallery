@@ -8,7 +8,22 @@
       </div>
     {{ end }}
 
-    {{ with .Params.images }}
+    {{ $images := .Params.images }}
+    {{ if not $images }}
+      {{/* フロントマターにimagesがない場合、本文からMarkdown形式の画像を抽出 */}}
+      {{ $content := .Content }}
+      {{ $imagePattern := `!\[\]\((https?://[^)]+)\)` }}
+      {{ $matches := findRE $imagePattern $content }}
+      {{ if $matches }}
+        {{ $images = slice }}
+        {{ range $matches }}
+          {{ $url := replaceRE `!\[\]\(([^)]+)\)` `$1` . }}
+          {{ $images = $images | append $url }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ with $images }}
       <div class="gallery-thumbnails">
         {{ range . }}
           {{ if strings.HasPrefix . "http" }}
